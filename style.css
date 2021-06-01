@@ -1,9 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 body { 
-    background-color: #919191;
+    background-color: #1f1f1f;
 }
 p{ 
     color: crimson;
     font-size: xx-large;
+    font-family: 'Rock Salt', cursive;
+}
 
-    
+button { 
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+}
+
+button:hover { 
+    color: #1883ba;
+    background-color: #ffffff;
+}
+
+h2 { 
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
+    font-size: 5vh;
+    color: #f1f1f1;
+}
+form{
+	width:300px;
+	padding:16px;
+	border-radius:10px;
+	background-color:#ccc;
+}
+
+form input[type="text"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
 }
