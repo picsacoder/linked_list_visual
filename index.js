@@ -154,3 +154,5 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         alert("Ingrese un elemento que se encuentre en la lista")
     }
 });
+
+//Validar data
