@@ -19,6 +19,12 @@ function linked_list() {
 
         if(inicio === null) { 
             inicio = nodo;
+        
+        
+            var test = document.createElement("p")
+            test.innerHTML = "test"
+            document.body.appendChild(test)
+        
         } //Checa si el inicio de la lista esta vacio, en caso de que si el nodo pasa a ser el primer elemento
 
         else { 
@@ -93,9 +99,7 @@ var lista = new linked_list();
 
 var boton_anadir = document.getElementById("anadir").addEventListener("click", function() {
     var valor = document.getElementById("valor_anadir");
-    alert("Elemento añadido con exito")
 
-    
     lista.anadir(valor.value)
     lista.getLongitud()
     console.log(lista.inicio())
@@ -104,7 +108,14 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
     elemento_grafico.id = valor.value
     elemento_grafico.innerHTML = valor.value
 
+    const img_flecha = document.createElement("img");
+    img_flecha.src = "./img/flecha.png"
+    img_flecha.style.width = "300px"
+
     document.body.appendChild(elemento_grafico);
+    document.body.appendChild(img_flecha);
+
+    alert("Elemento añadido con exito")
 
 });
 

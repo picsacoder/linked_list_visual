@@ -19,6 +19,10 @@ function linked_list() {
 
         if(inicio === null) { 
             inicio = nodo;
+            var valor = document.getElementById("valor_anadir");
+            const elemento_grafico = document.createElement("p");
+            elemento_grafico.id = valor.value
+            elemento_grafico.innerHTML = valor.value
         } //Checa si el inicio de la lista esta vacio, en caso de que si el nodo pasa a ser el primer elemento
 
         else { 
@@ -29,6 +33,10 @@ function linked_list() {
             }
 
             nodo_actual.next = nodo;
+            var valor = document.getElementById("valor_anadir");
+            const elemento_grafico = document.createElement("p");
+            elemento_grafico.id = valor.value
+            elemento_grafico.innerHTML = valor.value
         }
 
         longitud++ //Se le añade +1 a la longitud de la lista
@@ -99,10 +107,6 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
     lista.anadir(valor.value)
     lista.getLongitud()
     console.log(lista.inicio())
-
-    var mostrar = document.getElementById("p").innerHTML = lista.recorrer(valor.value);
-
-
 });
 
 
