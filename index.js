@@ -101,6 +101,7 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
     console.log(lista.inicio())
 
     const elemento_grafico = document.createElement("p");
+    elemento_grafico.id = valor.value
     elemento_grafico.innerHTML = valor.value
 
     document.body.appendChild(elemento_grafico);
@@ -115,7 +116,15 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
 
     try {
         lista.quitar(valor.value)
+        lista.getLongitud()
         alert("Elemento borrado con exito")
+
+
+        //borrar parrafo
+        var todo = document.body
+        var borrado = document.getElementById(valor.value)
+        todo.removeChild(borrado)
+
     } catch (error) {
         console.error("Error: Elemento no encontrado en la lista")
         alert("Ingrese un elemento que se encuentre en la lista")
