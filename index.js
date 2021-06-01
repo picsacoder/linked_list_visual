@@ -121,12 +121,18 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
 
     if (valor.value === " ") { 
         //Validamos que no sea algo vacio
+        console.error("Invalido")
+        var error_mostrar = document.getElementById("ifError");
+        error_mostrar.innerHTML = "ERROR: Ingrese un elemento valido";
         
-    };
+    }
+
+    else {
 
     lista.anadir(valor.value)
     lista.getLongitud()
     console.log(lista.inicio())
+    }
 
 
 
@@ -151,12 +157,21 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         var borrado = document.getElementById(valor.value)
         todo.removeChild(borrado)
 
-        //var borrar_imagen = document.getElementsByClassName(valor.value)[0]
-        //todo.removeChild(borrar_imagen)
-
-    } catch (error) {
+    } 
+    catch (error) {
         console.error("Error: Elemento no encontrado en la lista")
         alert("Ingrese un elemento que se encuentre en la lista")
+
+        
+    }
+
+
+    try {
+        var borrar_imagen = document.getElementsByClassName(valor.value)[0]
+        todo.removeChild(borrar_imagen)
+    } 
+    catch (error) {
+        
     }
 });
 
