@@ -119,6 +119,11 @@ var lista = new linked_list();
 var boton_anadir = document.getElementById("anadir").addEventListener("click", function() {
     var valor = document.getElementById("valor_anadir");
 
+    if (valor.value === " ") { 
+        //Validamos que no sea algo vacio
+        
+    };
+
     lista.anadir(valor.value)
     lista.getLongitud()
     console.log(lista.inicio())
