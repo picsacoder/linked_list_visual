@@ -20,10 +20,13 @@ function linked_list() {
         if(inicio === null) { 
             inicio = nodo;
         
-        
-            var test = document.createElement("p")
-            test.innerHTML = "test"
-            document.body.appendChild(test)
+            var valor = document.getElementById("valor_anadir");
+
+            const elemento_grafico = document.createElement("p");
+            elemento_grafico.id = valor.value
+            elemento_grafico.innerHTML = valor.value
+
+            document.body.appendChild(elemento_grafico);
         
         } //Checa si el inicio de la lista esta vacio, en caso de que si el nodo pasa a ser el primer elemento
 
@@ -32,8 +35,24 @@ function linked_list() {
 
             while (nodo_actual.next) {
                 nodo_actual = nodo_actual.next;
+
             }
 
+            var valor = document.getElementById("valor_anadir");
+            const img = document.createElement("img");
+
+
+            img.src = "./img/flecha.png";
+            img.style.width = "300px";
+            img.className = valor.value
+            document.body.appendChild(img)
+
+            const elemento_grafico = document.createElement("p");
+            elemento_grafico.id = valor.value
+            elemento_grafico.innerHTML = valor.value
+
+            document.body.appendChild(elemento_grafico);
+        
             nodo_actual.next = nodo;
         }
 
@@ -104,16 +123,7 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
     lista.getLongitud()
     console.log(lista.inicio())
 
-    const elemento_grafico = document.createElement("p");
-    elemento_grafico.id = valor.value
-    elemento_grafico.innerHTML = valor.value
 
-    const img_flecha = document.createElement("img");
-    img_flecha.src = "./img/flecha.png"
-    img_flecha.style.width = "300px"
-
-    document.body.appendChild(elemento_grafico);
-    document.body.appendChild(img_flecha);
 
     alert("Elemento añadido con exito")
 
@@ -135,6 +145,9 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         var todo = document.body
         var borrado = document.getElementById(valor.value)
         todo.removeChild(borrado)
+
+        var borrar_imagen = document.getElementsByClassName(valor.value)[0]
+        todo.removeChild(borrar_imagen)
 
     } catch (error) {
         console.error("Error: Elemento no encontrado en la lista")
