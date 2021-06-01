@@ -146,8 +146,8 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         var borrado = document.getElementById(valor.value)
         todo.removeChild(borrado)
 
-        var borrar_imagen = document.getElementsByClassName(valor.value)[0]
-        todo.removeChild(borrar_imagen)
+        //var borrar_imagen = document.getElementsByClassName(valor.value)[0]
+        //todo.removeChild(borrar_imagen)
 
     } catch (error) {
         console.error("Error: Elemento no encontrado en la lista")
