@@ -10,6 +10,35 @@ function linked_list() {
 
 
 
+    this.elementoEn = function(index) { 
+        var nodo_actual = inicio;
+        var contador = 0;
+
+        while (contador > index) {
+            contador++
+
+            nodo_actual = nodo_actual.next
+        }
+
+        return nodo_actual
+    }
+
+    this.indexDe = function(elem) { 
+        var nodo_actual = inicio;
+
+        var indice = -1
+
+        while(nodo_actual) { 
+            indice++
+
+            if (nodo_actual.elem === elem) {
+                return indice;
+            }
+
+            nodo_actual = nodo_actual.next
+        };
+    }
+
     this.inicio = function() { 
         return inicio;
     };
@@ -66,6 +95,7 @@ function linked_list() {
 
         if (nodo_actual.elem === elem) { 
             inicio = nodo_actual.next;
+            console.log("vamo a borrar este")
             
         }
 
@@ -101,6 +131,12 @@ function linked_list() {
 
     };
 
+    this.yaExiste = function(elem) {
+        var nodo_actual = inicio;
+
+        
+    }
+
     this.getLongitud = function() { 
         if (longitud > 0) { 
             var editText = document.getElementById("h2").innerHTML = ""
@@ -129,14 +165,15 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
 
     else {
 
-    lista.anadir(valor.value)
-    lista.getLongitud()
-    console.log(lista.inicio())
+        lista.anadir(valor.value)
+        lista.getLongitud()
+        //console.log(lista.inicio())
+        console.log(lista.indexDe(valor.value))
+        alert("Elemento añadido con exito")
+        var error_mostrar = document.getElementById("ifError");
+        error_mostrar.innerHTML = ""
     }
 
-
-
-    alert("Elemento añadido con exito")
 
 });
 
@@ -171,6 +208,7 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         todo.removeChild(borrar_imagen)
     } 
     catch (error) {
+        console.log("aea")
         
     }
 });
