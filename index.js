@@ -41,6 +41,23 @@ function linked_list() {
         };
     }
 
+    this.yaExiste = function(elem) {
+        var nodo_actual = inicio;
+
+        var indice = -1
+
+        while(nodo_actual) { 
+            indice++
+
+            if (nodo_actual.elem === elem) {
+                return "ojito";
+            }
+
+            nodo_actual = nodo_actual.next
+        };
+    }
+
+
     this.inicio = function() { 
         return inicio;
     };
@@ -173,13 +190,17 @@ var lista = new linked_list();
 var boton_anadir = document.getElementById("anadir").addEventListener("click", function() {
     var valor = document.getElementById("valor_anadir");
 
-    if (valor.value === " ") { 
-        //Validamos que no sea algo vacio
-        console.error("Invalido")
-        var error_mostrar = document.getElementById("ifError");
-        error_mostrar.innerHTML = "ERROR: Ingrese un elemento valido";
-        
+    if (lista.yaExiste(valor.value)) {
+        alert("Ingrese un elemento que no este en la lista")
     }
+
+    //if (valor.value === " ") { 
+    //    //Validamos que no sea algo vacio
+    //    console.error("Invalido")
+    //    var error_mostrar = document.getElementById("ifError");
+    //    error_mostrar.innerHTML = "ERROR: Ingrese un elemento valido";
+        
+    //}
 
     else {
 
@@ -226,7 +247,17 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         todo.removeChild(borrar_imagen)
     } 
     catch (error) {
-        //console.log("aea")
+        if (lista.elementoEn(0)) {
+            console.log(lista.elementoEn(0).elem)
+
+            let ayno = lista.elementoEn(0).elem;
+
+            console.log(lista.indexDe(ayno))
+
+            var getImg = document.getElementsByClassName(lista.elementoEn(0).elem)[0]
+
+            var borr = document.body.removeChild(getImg);
+        };
         
     }
 });
