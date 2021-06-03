@@ -166,11 +166,7 @@ function linked_list() {
 
     };
 
-    //this.yaExiste = function(elem) {
-    //    var nodo_actual = inicio;
 
-    //    
-    //}
 
     this.getLongitud = function() { 
         if (longitud > 0) { 
@@ -194,13 +190,7 @@ var boton_anadir = document.getElementById("anadir").addEventListener("click", f
         alert("Ingrese un elemento que no este en la lista")
     }
 
-    //if (valor.value === " ") { 
-    //    //Validamos que no sea algo vacio
-    //    console.error("Invalido")
-    //    var error_mostrar = document.getElementById("ifError");
-    //    error_mostrar.innerHTML = "ERROR: Ingrese un elemento valido";
-        
-    //}
+
 
     else {
 
