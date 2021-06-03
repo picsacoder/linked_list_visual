@@ -1,3 +1,5 @@
+
+
 function linked_list() { 
     var longitud = 0;
     var inicio = null;
@@ -71,9 +73,14 @@ function linked_list() {
             const img = document.createElement("img");
 
 
+
             img.src = "./img/flecha.png";
             img.style.width = "300px";
             img.className = valor.value
+
+            //
+            
+
             document.body.appendChild(img)
 
             const elemento_grafico = document.createElement("p");
@@ -84,18 +91,25 @@ function linked_list() {
         
             nodo_actual.next = nodo;
         }
+        
+
+        
+
 
         longitud++ //Se le añade +1 a la longitud de la lista
     };
 
 
+
+
     this.quitar = function(elem) {
         var nodo_actual = inicio;
         var nodo_anterior;
+        
 
         if (nodo_actual.elem === elem) { 
             inicio = nodo_actual.next;
-            console.log("vamo a borrar este")
+            
             
         }
 
@@ -107,6 +121,10 @@ function linked_list() {
 
             nodo_anterior.next = nodo_actual.next;
         }
+        
+
+        
+    
 
         longitud--
     };
@@ -131,11 +149,11 @@ function linked_list() {
 
     };
 
-    this.yaExiste = function(elem) {
-        var nodo_actual = inicio;
+    //this.yaExiste = function(elem) {
+    //    var nodo_actual = inicio;
 
-        
-    }
+    //    
+    //}
 
     this.getLongitud = function() { 
         if (longitud > 0) { 
@@ -208,7 +226,7 @@ var boton_quitar = document.getElementById("quitar").addEventListener("click", f
         todo.removeChild(borrar_imagen)
     } 
     catch (error) {
-        console.log("aea")
+        //console.log("aea")
         
     }
 });

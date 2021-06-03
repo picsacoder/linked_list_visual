@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 body { 
     background-color: #1f1f1f;
 }
 p{ 
     color: crimson;
     font-size: xx-large;
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Open Sans', sans-serif;
 
 }
 
