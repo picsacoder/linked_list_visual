@@ -50,7 +50,7 @@ function linked_list() {
             indice++
 
             if (nodo_actual.elem === elem) {
-                return "ojito";
+                return true;
             }
 
             nodo_actual = nodo_actual.next
